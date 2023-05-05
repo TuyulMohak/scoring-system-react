@@ -5,12 +5,15 @@ import Events from './pages/Events'
 import Event from './pages/Event'
 import Players from './pages/Players'
 import Scores from './pages/Scores'
+import OnlyInDesktop from './components/OnlyInDesktop'
 
 import SideDrawer from './components/SideDrawer'
 
 function App() {
   return (
     <>
+
+      <div className="visible md:invisible" ><OnlyInDesktop/></div>
       <div className="grid grid-cols-5">
         <div className="col-span-1">
           <SideDrawer/>

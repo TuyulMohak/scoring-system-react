@@ -98,7 +98,7 @@ const useMainStore = create((set, get) => ({
     name = name.trim()
     const isExist = get().events.find(event=>event.id === id)
     if (isExist === undefined) {
-      set((state) => ({ events: [...state.events, {id, name, rounds}] }))
+      set((state) => ({ events: [...state.events, {id, name, rounds, players:[]}] }))
     } else{
       alert('id Already Exist')
     }

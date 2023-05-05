@@ -16,6 +16,11 @@ export default function ({ act }) {
 		}
 		else{	
 			act(newId, newName, newRounds)
+			setIsOpen(false)
+			setNewId('')
+			setNewName('')
+			setNewRounds([])
+			alert('Successfully created event')
 		}
 		e.preventDefault()
 	}

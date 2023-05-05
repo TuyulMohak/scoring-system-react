@@ -20,6 +20,7 @@ export default function () {
 	            <Link to="/scores">📊Scores</Link>
 	          </li>
 	        </ul>
+	        <div className="fixed bottom-0 right-0 text-sm">Made with 💻🖱 by Muhammad Rivandra 2023</div>
 	    </nav>
 	)
 }

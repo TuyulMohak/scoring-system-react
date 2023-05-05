@@ -26,7 +26,7 @@ export default function ({ act }) {
 	}
 
 	const rounds = newRounds.map(round=>(
-		<li>{round.id} - {round.name} - {round.type} - <a className="hover:text-red-600 cursor-pointer p-3" onClick={() => deleteRound(round.id)} >x</a> </li>
+		<tr key={round.id}> <td>{round.id}</td> <td>{round.name}</td> <td>{round.type}</td> <td><a className="text-red-500 hover:text-red-300 cursor-pointer p-3" onClick={() => deleteRound(round.id)} >Delete</a></td></tr>
 	))
 
 	const handleAddRound = () => {
@@ -60,27 +60,42 @@ export default function ({ act }) {
 
 	return (
 		<>
-			<button onClick={() => setIsOpen(!isOpen)}>Add an Event</button>
+			<button className="flat-btn" onClick={() => setIsOpen(!isOpen)}>Add an Event</button>
 			{isOpen && 
-				<div className="border rounded-md my-3 ml-7 p-5">
+				<div className="border border-gray-500 rounded-md my-3 ml-7 p-5">
 					<div>
-						<input value={newId} onChange={(e) =>setNewId(e.target.value)} placeholder="Event Id"/>
-						<input value={newName} onChange={(e) =>setNewName(e.target.value)} placeholder="Event Name"/>
+						<label className="block"><b className="block">Event ID &emsp;&nbsp;</b>		<input value={newId} onChange={(e) =>setNewId(e.target.value)} placeholder="ex: ev_1"/></label>
+						<label className="block"><b className="block">Event Name</b> 	<input value={newName} onChange={(e) =>setNewName(e.target.value)} placeholder="ex: Final Exam"/></label>
+						
 					</div>
-					<h6>Rounds</h6>
-					<div>
-						{rounds}
-					</div>
-					<div class="flex gap-7">
-						<input value={roundId} onChange={(e) =>setRoundId(e.target.value)} placeholder="new roundId"/>
-						<input value={roundName} onChange={(e) =>setRoundName(e.target.value)} placeholder="new roundName"/>
-						<select name="Round Types" onChange={(e) =>setRoundType(e.target.value)}>
-						  <option value="text">text</option>
-						  <option value="number">number</option>
-						</select>
-						<button className="cursor-pointer" onClick={() => handleAddRound()} className="bg-blue-100">Add Round</button>
-					</div>
-					<button className="bg-green-800 text-white p-3 text-xl" onClick={(e) => handleSubmit(e)} > Add Event </button>
+					<label className="font-bold">Rounds</label>
+					<table className="w-3/4 text-center text-gray-700">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Type</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{rounds}
+							<tr>
+								<td><input value={roundId} onChange={(e) =>setRoundId(e.target.value)} placeholder="new roundId"/></td>
+								<td><input value={roundName} onChange={(e) =>setRoundName(e.target.value)} placeholder="new roundName"/></td>
+								<td>
+									<select name="Round Types" onChange={(e) =>setRoundType(e.target.value)}>
+									  <option value="text">text</option>
+									  <option value="number">number</option>
+									</select>
+								</td>
+								<td>
+									<button className="cursor-pointer" onClick={() => handleAddRound()} className="bg-green-300">Add Round</button>
+								</td>								
+							</tr>
+						</tbody>
+					</table>
+					<button className="mt-5 bg-green-800 text-white p-3 text-xl" onClick={(e) => handleSubmit(e)} > Add Event </button>
 				</div>
 			}
 		</>

@@ -36,7 +36,7 @@ export default function () {
 	console.log(players)
 	return (
 		<>
-			<h1>{ name } Event</h1>
+			<h1 className="mb-3">{ name } Event</h1>
 			<table className="table-auto border w-full text-center">
 				<thead>
 					<tr>

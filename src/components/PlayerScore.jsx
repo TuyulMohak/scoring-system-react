@@ -24,13 +24,13 @@ export default function ({ player, eventId }) {
 		updateScore(eventId, player.id, scores)
 	}
 	return (
-		<tr className="border-gray-500" key={player.id}>
+		<tr key={player.id}>
 			<td>{id}</td>
 			<td>{name}</td>
 			{scores.map(score=>(				
 				<td> <input type={score.roundType} onChange={(e) => handleInputChange(e, score.roundId)} value={score.score !== null ? score.score : ''} /> </td>
 			))}
-			<td><button onClick={() => handleUpdateScore()}>✏Update Score</button></td>
+			<td><a className="flat-btn" onClick={() => handleUpdateScore()}>✏Update Score</a></td>
 		</tr>
 	)
 }

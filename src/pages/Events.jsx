@@ -10,9 +10,9 @@ export default function () {
 	
 	return (
 		<>
-		<h1>Events</h1>
+		<h1 className="mb-5">Events</h1>
 
-		<div className="my-3">
+		<div className="mb-3">
 			<AddEvent act={addEvent}/>
 		</div>
 
@@ -30,9 +30,9 @@ export default function () {
 									))}
 								</ol> 
 							}
-						<button onClick={() => deleteEvent(event.id)}>
+						<a className="delete-btn" onClick={() => deleteEvent(event.id)}>
 							delete
-						</button>
+						</a>
 					</div>
 				</li>
 			))}

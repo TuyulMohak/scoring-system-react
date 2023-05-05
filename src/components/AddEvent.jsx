@@ -8,7 +8,7 @@ export default function ({ act }) {
 	const [roundId, setRoundId] = useState('')
 	const [roundName, setRoundName] = useState('')
 	const [roundType, setRoundType] = useState('text')
-	const [newRounds, setNewRounds] = useState([{id:'1', name:'firstR', type:'string'}])
+	const [newRounds, setNewRounds] = useState([{id:'1', name:'firstRound', type:'text'}])
 	
 	const handleSubmit = (e) => {
 		if(newId === '' || newName === ''){

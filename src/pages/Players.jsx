@@ -10,11 +10,10 @@ export default function () {
 			<h1>Player Page</h1>
 
 			<AddPlayer act={addPlayer} />
-
 			<ol>
 				{players.map(student =>(
 					<li key={student.id}>
-						{student.id} - {student.name} - 
+						{student.id} - <b>{student.name}</b> - 
 						<button onClick={() => deletePlayer(student.id)}>
 							delete
 						</button>

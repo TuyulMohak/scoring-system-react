@@ -41,31 +41,54 @@ const useMainStore = create((set, get) => ({
           type: 'number'
         }
       ],
-      scores: [
-        { id:'1', playerId: '1', roundId: '1', score: 'good enough'},
-        { id:'2', playerId: '1', roundId: '2', score: 80 },
-        { id:'3', playerId: '2', roundId: '2', score: 89 }
+      players: [
+        { 
+          id: '1',
+          scores:[
+            { roundId: '1', score: 'good enough'},
+            { roundId: '2', score: 80 }
+          ],
+        },
+        { 
+          id: '2',
+          scores:[
+            { roundId: '1', score: null },
+            { roundId: '2', score: 80 }
+          ]
+        }
       ]
     },
 
     {
       id: '2',
-      name: 'main',
+      name: 'Main',
       rounds: [
         { 
           id:'1',
-          name: 'round 1',
+          name: 'step 1',
           type: 'text'
         },
         { 
           id:'2',
-          name: 'round 2',
+          name: 'step 2',
           type: 'number'
         }
       ],
-      scores: [
-        { id:'1', playerId: '1', roundId: '1', score: 'horrible'},
-        { id:'2', playerId: '2', roundId: '2', score: 99 }
+      players: [
+        { 
+          id: '1',
+          scores:[
+            { roundId: '1', score: 'horrible'},
+            { roundId: '2', score: 90 }
+          ],
+        },
+        { 
+          id: '2',
+          scores:[
+            { roundId: '1', score: 'shee' },
+            { roundId: '2', score: null }
+          ]
+        }
       ]
     },
 
@@ -84,6 +107,33 @@ const useMainStore = create((set, get) => ({
     set(state=> ({ events: state.events.filter(event=> event.id !== id) }))
     alert('Deleted')
   },
+
+  updateScore: (eventId, playerId, scoreRow) => {
+    const events = get().events
+    console.log(eventId, playerId, scoreRow)
+    events.map(event => {
+      if(event.id === eventId){
+        // check if the player exist on the event, if no, make it
+        const isExist = event.players.findIndex(player => player.id === playerId)
+        console.log(isExist)
+        if(isExist !== -1){
+          event.players.map(player=>{
+          if(player.id === playerId){
+            player.scores = scoreRow
+          }
+        })
+        }
+        else{
+          event.players.push({
+            id: playerId,
+            scores: scoreRow
+          })  
+        }
+
+      }
+    })
+    alert('Update Success')
+  }
 }))
 
 export default useMainStore

@@ -15,7 +15,7 @@ h6 {
 }
 
 a {
-	@apply text-green-700
+	@apply text-green-700 active:underline;
 }
 
 input {

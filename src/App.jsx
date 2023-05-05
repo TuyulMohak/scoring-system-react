@@ -1,8 +1,3 @@
-// import { useState, useEffect } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import SideDrawer from './components/SideDrawer.jsx'
-
 import './App.css'
 import { Link, Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
@@ -25,7 +20,7 @@ function App() {
             <Route path="/" element={<Dashboard/>}/>
             <Route path="/events">
               <Route index element={<Events/>} />
-              <Route path=":id" element={<Event/>} />
+              <Route path=":name" element={<Event/>} />
             </Route>
             <Route path="/players" element={<Players/>}></Route>
             <Route path="/scores" element={<Scores/>}></Route>

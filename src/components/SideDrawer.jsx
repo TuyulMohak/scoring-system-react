@@ -4,11 +4,12 @@ export default function () {
 	return (
 		<nav className="p-5 text-2xl border border-green-5 h-screen fixed">
 	        <ul className="grid gap-5">
-	          <li className="font-bold">
-	            Scoring System
+	          <li className="font-bold text-blue-900 ">
+	            Scoring System🐱‍👤💯
 	          </li>
+	          <li><hr className="bg-blue-400"></hr></li>
 	          <li>
-	            <Link to="/">🏠Dashboard</Link>
+	            <Link to="/">🏡Dashboard</Link>
 	          </li>
 	          <li>
 	            <Link to="/events">🕹Events</Link>

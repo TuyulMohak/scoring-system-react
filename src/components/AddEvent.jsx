@@ -90,12 +90,12 @@ export default function ({ act }) {
 									</select>
 								</td>
 								<td>
-									<button className="cursor-pointer" onClick={() => handleAddRound()} className="bg-green-300">Add Round</button>
+									<button className="cursor-pointer" onClick={() => handleAddRound()} className="bg-purple-100">Add Round</button>
 								</td>								
 							</tr>
 						</tbody>
 					</table>
-					<button className="mt-5 bg-green-800 text-white p-3 text-xl" onClick={(e) => handleSubmit(e)} > Add Event </button>
+					<button className="mt-5 bg-purple-800 text-white p-3 text-xl" onClick={(e) => handleSubmit(e)} > Add Event </button>
 				</div>
 			}
 		</>

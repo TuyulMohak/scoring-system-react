@@ -39,7 +39,7 @@ export default function () {
 			<div className="border border-gray-300 rounded-md p-10 my-10">
 				<div>
 					<h2>About this App</h2>
-					<p>This app is an early version of my scoring system that I believe will be useful. We can add players, add events, and add rounds for each event, where we can give a score to each round for each player. I made this app to learn React with React Router and Zustand. It starts great until I start making SQL relations on Javascript arrays. In this app, you won't send any data to any backend because every submission is only stored in the zustand store.</p>
+					<p>This app is an early version of my scoring system that I believe will be useful for my organization's open recruitment. We can add players, add events, and add rounds for each event, where we can give a score to each round for each player. I made this app to learn React with React Router and Zustand. It starts great until I start making SQL relations on Javascript arrays. In this app, you won't send any data to any backend because every submission is only stored in the zustand store.</p>
 				</div>
 			</div>
 

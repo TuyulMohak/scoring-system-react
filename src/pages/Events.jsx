@@ -10,33 +10,33 @@ export default function () {
 	
 	return (
 		<>
-		<h1 className="mb-5">Events</h1>
+			<h1 className="mb-5">Events</h1>
 
-		<div className="mb-3">
-			<AddEvent act={addEvent}/>
-		</div>
+			<div className="mb-3">
+				<AddEvent act={addEvent}/>
+			</div>
 
-		<ol>
-			{events.map(event =>(
-				<li key={event.id}>
-					<div className="border rounded-md my-5 p-3">
-						<div className="text-3xl font-bold hover:underline"><Link to={ "/events/"+event.name } >{event.name}</Link></div>
-						<div><span className="font-bold">Id</span> 		: {event.id}</div>
-						<span className="font-bold">Rounds</span>  : 
-							{event.rounds !== undefined && 
-								<ol className="p-5"> 
-									{event.rounds.map(round =>(
-										<li key={round.id} > {round.id}  - {round.name} - {round.type} </li>
-									))}
-								</ol> 
-							}
-						<a className="delete-btn" onClick={() => deleteEvent(event.id)}>
-							delete
-						</a>
-					</div>
-				</li>
-			))}
-		</ol>
+			<ol>
+				{events.map(event =>(
+					<li key={event.id}>
+						<div className="border rounded-md my-5 p-3">
+							<div className="text-3xl font-bold hover:underline"><Link to={ "/events/"+event.name } >{event.name}</Link></div>
+							<div><span className="font-bold">Id</span> 		: {event.id}</div>
+							<span className="font-bold">Rounds</span>  : 
+								{event.rounds !== undefined && 
+									<ol className="p-5"> 
+										{event.rounds.map(round =>(
+											<li key={round.id} > {round.id}  - {round.name} - {round.type} </li>
+										))}
+									</ol> 
+								}
+							<a className="delete-btn" onClick={() => deleteEvent(event.id)}>
+								delete
+							</a>
+						</div>
+					</li>
+				))}
+			</ol>
 		</>
 	)
 }
